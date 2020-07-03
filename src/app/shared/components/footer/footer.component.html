@@ -1,0 +1,42 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Products</h3>
+          <ul>
+            <li>
+              <a routerLink="/products" [queryParams]="{ type: 'news' }"
+                >New Producs</a
+              >
+            </li>
+            <li>
+              <a routerLink="/products" [queryParams]="{ type: 'offer' }"
+                >In Offer</a
+              >
+            </li>
+            <li>
+              <a routerLink="/products" [queryParams]="{ type: 'latest' }"
+                >Last products</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>About the Store</h3>
+          <ul>
+            <li><a routerLink="/about-us">About us</a></li>
+            <li><a routerLink="/stores">Ours store</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Contact</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

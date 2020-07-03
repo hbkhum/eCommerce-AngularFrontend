@@ -28,7 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
+              "./node_modules/ngx-toastr/toastr.css",
+              "src/styles.scss",
+              "./node_modules/swiper/css/swiper.min.css"
             ],
             "scripts": []
           },
@@ -93,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -124,6 +129,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "store"
 }

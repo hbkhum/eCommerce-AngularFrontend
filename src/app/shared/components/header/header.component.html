@@ -1,0 +1,27 @@
+<mat-toolbar color="warn">
+    <mat-toolbar-row>
+        <div class="row between-xs middle-xs header-row">
+            <nav>
+                <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+                <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+                <a mat-button routerLink="/order" routerLinkActive="active">Orders</a>
+                <button *ngIf="(isLogged$| async)" mat-button [matMenuTriggerFor]="menu">{{userName$ | async }}</button>
+                <mat-menu  #menu="matMenu">
+                  <button mat-menu-item routerLink="/admin">Admin</button>
+                  <button mat-menu-item (click)="logOut()">LogOut</button>
+                </mat-menu>                
+                <a *ngIf="!(isLogged$| async)" mat-button routerLink="/auth/login" routerLinkActive="active">Login</a>
+                <!--
+                <a *ngIf="onEnabledEmp()"mat-button routerLink="/admin" routerLinkActive="active">Admin</a>
+                -->
+            </nav>
+            <!--<a routerLink='/order' mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn" >
+            (isLogged$ | async) as boolean
+            -->
+            <a routerLink='/order' mat-raised-button [matBadge]="total$ | async" matBadgeColor="primary" >
+                <mat-icon>shopping_cart</mat-icon>
+                Cart
+            </a>            
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

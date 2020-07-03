@@ -1,0 +1,17 @@
+<div *ngIf="(product$ | async) as product">
+    <div>
+      
+      <img [src]="'data:image/jpeg;base64,'+product.productImage[0].fileImage" alt="">
+      </div>
+    <div>
+        <ul>
+            <li>Name: {{ product.title }}</li>
+            <li>Price: {{ product.price | currency }}</li>
+          </ul>
+        <p>
+            {{ product.description }}
+        </p>
+    </div>
+
+</div>
+

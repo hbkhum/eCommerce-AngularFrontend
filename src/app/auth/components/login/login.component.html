@@ -1,0 +1,47 @@
+<div class="row center-xs">
+  <div class="box">
+    <form [formGroup]="form" (ngSubmit)="login($event)">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-xs">
+              <mat-form-field appearance="fill">
+                <mat-label>User name</mat-label>
+                <input autocomplete="off" formControlName="userName" matInput type="text">
+                <span mat-icon-button matSuffix>
+                  <mat-icon>person</mat-icon>
+                </span>              
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs">
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button [disabled]="form.invalid" mat-raised-button color="accent" type="submit">Login</button>
+          <button [disabled]="form.invalid" mat-raised-button type="button" (click)="cancel()">Cancel</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>        
+  </div>
+  
+</div>
+<div class="row center-xs">
+  <p>User Name & password is: <strong>admin</strong></p>
+</div>
+
+
+
+  

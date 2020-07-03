@@ -1,0 +1,109 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+<h1 mat-dialog-title>{{data.message}}</h1>
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)" >
+    <div mat-dialog-content>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Product
+                </mat-card-title>
+            </mat-card-header>    
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Title</mat-label>
+                            <input autocomplete="off" formControlName="title" matInput type="text">
+                            <span mat-icon-button matSuffix>
+                                <mat-icon>view_stream</mat-icon>
+                            </span>                               
+                        </mat-form-field>                        
+                        <mat-form-field appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <input autocomplete="off" formControlName="description" matInput type="text">
+                            <span mat-icon-button matSuffix>
+                                <mat-icon>description</mat-icon>
+                            </span>                              
+                        </mat-form-field>    
+
+                    </div>                      
+                </div>  
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field  appearance="outline">
+                            <mat-label>Price</mat-label>
+                            <input autocomplete="off" formControlName="price" matInput type="number">
+                            <span mat-icon-button matPrefix>
+                                <mat-icon>attach_money</mat-icon>
+                            </span>    
+                            <span matSuffix>.00</span>
+                        </mat-form-field>
+                    </div>                                              
+                </div>   
+                <div class="row">
+                    <div class="col-xs">
+
+                        <div *ngFor="let imagesList of productImage ;let i = index">
+                            <div class="crop-image">
+                                <img  [src]="imagesList?.fileImage" alt="">
+                              </div>
+                     
+                        </div>
+
+                        <button type="button" *ngIf="(totalImages )" mat-raised-button color="warn"  (click)="onRemoveImage($event)" >
+                            <mat-icon>
+                                remove_circle
+                            </mat-icon>
+                            Remove Image
+                          </button>  
+                          {{(totalImages )}}
+                        <input *ngIf="!(totalImages )" type="file"  (change)="uploadFile($event)">         
+                        <!--
+                      <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+                      
+                      <div class="crop-image">
+                        <img formControlName="price"  [src]="img" alt="">
+                      </div>
+                      -->
+
+                    </div>
+                  </div>                                       
+            </mat-card-content>
+            <mat-card-actions>
+                <button [disabled]="!(form.valid && form.dirty)"  mat-raised-button color="accent" type="submit">
+                    <mat-icon>
+                        done
+                    </mat-icon>
+                    Submit
+                </button>
+                <button mat-raised-button color="primary" [disabled]="!(form.dirty)" (click)="onNoClick()" >
+                    <mat-icon>
+                        cancel
+                    </mat-icon>
+                    Cancel
+                </button>                  
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+</form>        
+
+
+<!--
+<mat-tab-group dynamicHeight>
+     #enddocregion dynamic-height 
+      <mat-tab label="Short tab">
+        <div class="example-small-box mat-elevation-z4">
+          Small content
+        </div>
+      </mat-tab>
+      <mat-tab label="Long tab">
+        <div class="example-large-box mat-elevation-z4">
+          Large content
+        </div>
+      </mat-tab>
+</mat-tab-group>
+-->
+
