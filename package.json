@@ -26,7 +26,7 @@
     "ngx-spinner": "^8.1.0",
     "ngx-toastr": "^11.3.3",
     "rxjs": "~6.4.0",
-    "swiper": "^5.4.5",
+    "swiper": "^6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
