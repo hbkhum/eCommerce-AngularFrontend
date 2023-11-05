@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  url_api: 'http://humbertopedraza.dynu.com:9500/api',
+  url_api: 'http://humbertopedraza.dynu.com:9444/api',
   //url_api: 'http://localhost:8080/api',
   production: false
 };
